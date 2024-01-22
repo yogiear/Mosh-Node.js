@@ -48,7 +48,7 @@ const EventEmitter = require('node:events');
 class MyEmitter extends EventEmitter {}
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', () => {
-  console.log('an event occurred!');
+myEmitter.on('event', (arg) => {
+  console.log('an event occurred!', arg);
 });
-myEmitter.emit('event');
+myEmitter.emit('event', {id: 1, url: 'http://'});
