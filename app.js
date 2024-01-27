@@ -1,54 +1,43 @@
-// // // // // // // function sayHello(name) {
-// // // // // // //     console.log('Hello ' + name);
-// // // // // // // }
+const logger = require('./logger');
 
-// // // // // // // sayHello('Brother');
+logger.logging('message');
 
-// // // // // // var text = '';
-// // // // // // console.log(global.text);
+// // // // const path = require('path');
 
-// // // // // console.log(module);
+// // // // var pathObj = path.parse(__filename);
 
-// // // // // const logger = require('./logger');
-// // // // const log = require('./logger');
+// // // // console.log(pathObj);
 
-// // // // // logger.log('message');
-// // // // log('message');
+// // // const os = require('node:os');
 
-// // // const path = require('path');
+// // // var totalMemory = os.totalmem();
+// // // var freeMemory = os.freemem();
 
-// // // var pathObj = path.parse(__filename);
+// // // console.log('Total Memory: ' + totalMemory);
+// // // console.log(`Total Memory: ${totalMemory}`);
+// // // console.log(`Free Memory: ${freeMemory}`);
 
-// // // console.log(pathObj);
+// // const fs = require('node:fs');
 
-// // const os = require('node:os');
+// // const files = fs.readdirSync('./');
+// // console.log(files);
 
-// // var totalMemory = os.totalmem();
-// // var freeMemory = os.freemem();
+// // fs.readdir('../../Mosh Course/Mosh-GIT', function(err, files) {
+// //     if (err) {
+// //         console.log('Error', err);
+// //     } else {
+// //         console.log('Result', files);
+// //     }
+// // });
 
-// // console.log('Total Memory: ' + totalMemory);
-// // console.log(`Total Memory: ${totalMemory}`);
-// // console.log(`Free Memory: ${freeMemory}`);
+// const EventEmitter = require('events');
+// class MyEmitter extends EventEmitter {}
+// const myEmitter = require('./logger');
 
-// const fs = require('node:fs');
-
-// const files = fs.readdirSync('./');
-// console.log(files);
-
-// fs.readdir('../../Mosh Course/Mosh-GIT', function(err, files) {
-//     if (err) {
-//         console.log('Error', err);
-//     } else {
-//         console.log('Result', files);
-//     }
+// myEmitter.on('event', (arg) => {
+//   console.log('an event occurred!', arg);
 // });
 
-const EventEmitter = require('node:events');
+// myEmitter.emit('event', {id: 1, url: 'http://'});
 
-class MyEmitter extends EventEmitter {}
-
-const myEmitter = new MyEmitter();
-myEmitter.on('event', (arg) => {
-  console.log('an event occurred!', arg);
-});
-myEmitter.emit('event', {id: 1, url: 'http://'});
+// myEmitter.log('message')
