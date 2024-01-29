@@ -1,43 +1,17 @@
-const logger = require('./logger');
+// const log = require('./logger');
 
-logger.logging('message');
+// log.logging('okay.');
+// console.log(log);
 
-// // // // const path = require('path');
+const Logger = require('./logger');
+const logger = new Logger();
 
-// // // // var pathObj = path.parse(__filename);
+// Register a listener
+logger.on('messageLogged', (arg) => {
+    console.log('Listener called', arg)
+});
 
-// // // // console.log(pathObj);
+logger.log('message');
 
-// // // const os = require('node:os');
-
-// // // var totalMemory = os.totalmem();
-// // // var freeMemory = os.freemem();
-
-// // // console.log('Total Memory: ' + totalMemory);
-// // // console.log(`Total Memory: ${totalMemory}`);
-// // // console.log(`Free Memory: ${freeMemory}`);
-
-// // const fs = require('node:fs');
-
-// // const files = fs.readdirSync('./');
-// // console.log(files);
-
-// // fs.readdir('../../Mosh Course/Mosh-GIT', function(err, files) {
-// //     if (err) {
-// //         console.log('Error', err);
-// //     } else {
-// //         console.log('Result', files);
-// //     }
-// // });
-
-// const EventEmitter = require('events');
-// class MyEmitter extends EventEmitter {}
-// const myEmitter = require('./logger');
-
-// myEmitter.on('event', (arg) => {
-//   console.log('an event occurred!', arg);
-// });
-
-// myEmitter.emit('event', {id: 1, url: 'http://'});
-
-// myEmitter.log('message')
+// //Raise an event
+// emitter.emit('messageLogged', {id: 1, url: 'http://'});
